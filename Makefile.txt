@@ -1,0 +1,19 @@
+
+SCRIPT=guessinggame.sh
+all: README.md
+README.md:
+	@echo "# Guessing Game" > README.md
+	@echo "Date and Time: $(shell date)" >> README.md
+	@echo "Number of lines in guessinggame.sh: $(shell wc -l < $(SCRIPT))" >> README.md
+	@echo "Project created by: [Votre Nom]" >> README.md
+	@echo "Description: Un jeu où l'utilisateur doit deviner le nombre de fichiers dans le répertoire." >> README.md
+	@echo "Instructions: Exécutez le script guessinggame.sh en utilisant la commande bash guessinggame.sh." >> README.md
+
+# Cible pour exécuter le script guessinggame.sh
+run:
+	bash $(SCRIPT)
+
+# Cible pour nettoyer les fichiers générés
+clean:
+	rm -f README.md
+
